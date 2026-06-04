@@ -326,10 +326,7 @@ def get_llm_provider() -> LLMProvider:
     
     # --- Логирование ключей для диагностики Railway ---
     logger.info(f"LLM_PROVIDER = {primary_name}")
-    logger.info(f"LLM_API_KEY loaded = {bool(CONFIG.LLM_API_KEY)}")
-    logger.info(f"LLM_API_KEY len = {len(CONFIG.LLM_API_KEY) if CONFIG.LLM_API_KEY else 0}")
-    logger.info(f"DEEPSEEK_API_KEY loaded = {bool(CONFIG.DEEPSEEK_API_KEY)}")
-    logger.info(f"DEEPSEEK_API_KEY len = {len(CONFIG.DEEPSEEK_API_KEY) if CONFIG.DEEPSEEK_API_KEY else 0}")
+    logger.info(f"Primary LLM initialized: {primary_provider.__class__.__name__}")
     # -------------------------------------------------
 
     if primary_name.lower() == "gemini" and CONFIG.DEEPSEEK_API_KEY:
